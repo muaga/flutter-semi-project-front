@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blog/_core/constants/colors.dart';
 import 'package:flutter_blog/_core/constants/size.dart';
+import 'package:flutter_blog/ui/pages/book_list_page/widgets/book_grid_view.dart';
 
 class CustomTabBar extends StatefulWidget {
   const CustomTabBar({super.key});
@@ -51,9 +52,7 @@ class _CustomTabBarState extends State<CustomTabBar>
               child: Stack(
             children: [
               TabBarView(controller: _tabController, children: [
-                Center(
-                  child: Text("종합"),
-                ),
+                BookGridView(),
                 Center(
                   child: Text("에세이"),
                 ),

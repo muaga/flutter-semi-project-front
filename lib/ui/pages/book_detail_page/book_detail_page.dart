@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_blog/data/model/Book.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class BookDetailPage extends StatelessWidget {
+class BookDetailPage extends ConsumerWidget {
   const BookDetailPage();
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold();
   }
 }

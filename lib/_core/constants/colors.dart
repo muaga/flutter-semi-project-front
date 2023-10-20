@@ -6,12 +6,12 @@ const Color kPrimaryColor = Color(0xFFFEEA61);
 const Color kPointColor = Color(0xFFA450F6);
 
 // font color
-const Color kWhite = Color(0xFFFFFFFF);
-const Color kBlack = Color(0xFF222222);
-const Color kGray = Color(0xFF7A7773);
-const Color kLightGray = Color(0xFFA9A59F);
+const Color kFontBlack = Color(0xFF222222);
+const Color kFontGray = Color(0xFF6F6F6F);
+const Color kFontLightGray = Color(0xFFC8C8C9);
 
 // background color
+const Color kBackWhite = Color(0xFFFFFFFF);
 const Color kBackIbory = Color(0xFFFAFAF6);
 const Color kBackIbory2 = Color(0xFFF4F5F8);
 const Color kBackLightGray = Color(0xFFF4F5F8);

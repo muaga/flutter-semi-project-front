@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blog/_core/constants/colors.dart';
+import 'package:flutter_blog/ui/pages/book_detail_page/book_detail_page.dart';
 import 'package:flutter_blog/ui/pages/book_list_page/book_list_page.dart';
 
 class CustomBottomBar extends StatefulWidget {
@@ -19,7 +20,7 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
         index: _selectedIndex,
         children: [
           BookListPage(),
-          Center(child: Text("테스트2")),
+          BookDetailPage(),
           Center(child: Text("테스트3")),
           Center(child: Text("테스트4")),
           Center(child: Text("테스트5")),

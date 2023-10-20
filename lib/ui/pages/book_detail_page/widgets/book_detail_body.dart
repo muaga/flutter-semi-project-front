@@ -13,8 +13,8 @@ import 'package:flutter_blog/ui/pages/book_detail_page/widgets/review_insert.dar
 import 'package:flutter_blog/ui/widgets/thick_line.dart';
 import 'package:flutter_blog/ui/widgets/thin_line.dart';
 
-class BookDetailViewBody extends StatelessWidget {
-  const BookDetailViewBody({super.key});
+class BookDetailBody extends StatelessWidget {
+  const BookDetailBody({super.key});
 
   @override
   Widget build(BuildContext context) {

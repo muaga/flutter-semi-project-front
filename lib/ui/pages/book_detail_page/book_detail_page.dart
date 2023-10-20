@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blog/ui/pages/book_detail_page/widgets/book_detail_body.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import 'widgets/book_detail_body.dart';
 
 class BookDetailPage extends ConsumerWidget {
@@ -9,8 +9,13 @@ class BookDetailPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      /// 앱바 시작
       appBar: AppBar(
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.arrow_back_ios)),
+        title: Text(""),
         actions: [
           IconButton(
             onPressed: () {},
@@ -22,9 +27,7 @@ class BookDetailPage extends ConsumerWidget {
           )
         ],
       ),
-
-      /// 리스트뷰 시작
-      body: BookDetailViewBody(),
+      body: BookDetailBody(),
     );
   }
 }

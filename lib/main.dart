@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_blog/ui/pages/book_detail_page/book_detail_page.dart';
 import 'package:flutter_blog/_core/constants/theme.dart';
-import 'package:flutter_blog/ui/pages/book_list_page/book_list_page.dart';
 import 'package:flutter_blog/ui/widgets/custom_bottom_bar.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

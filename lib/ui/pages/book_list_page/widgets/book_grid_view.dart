@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blog/_core/constants/size.dart';
 import 'package:flutter_blog/data/model/Book.dart';
 import 'package:flutter_blog/ui/pages/book_list_page/widgets/book_form.dart';
 
@@ -7,19 +8,23 @@ class BookGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      padding: EdgeInsets.symmetric(horizontal: 20),
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 3,
-        mainAxisSpacing: 10,
-        crossAxisSpacing: 10,
-        childAspectRatio: 1 / 1.5,
+    return Container(
+      width: getScreenWidth(context),
+      height: getScreenHeight(context),
+      child: GridView.builder(
+        padding: EdgeInsets.symmetric(horizontal: 20),
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          mainAxisSpacing: 10,
+          crossAxisSpacing: 10,
+          childAspectRatio: 1 / 2,
+        ),
+        itemCount: books.length,
+        itemBuilder: (context, index) {
+          return BookForm(books[index]);
+        },
+        // 더 많은 리스트 아이템을 추가할 수 있습니다.
       ),
-      itemCount: books.length,
-      itemBuilder: (context, index) {
-        return BookForm(books[index]);
-      },
-      // 더 많은 리스트 아이템을 추가할 수 있습니다.
     );
   }
 }

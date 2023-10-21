@@ -8,24 +8,42 @@ class BookForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FittedBox(
+    return Container(
       child: Column(
         children: [
-          Image.asset(book.bookImage, fit: BoxFit.cover),
-          Text(
-            book.title,
-            style: TextStyle(
-              fontSize: 16, // Adjust the font size as needed
-              fontWeight: FontWeight.bold, // You can change the font weight
-              color: Colors.black, // You can set the text color
-            ),
+          Expanded(
+            child: Container(
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+              image: AssetImage(book.bookImage),
+              fit: BoxFit.cover,
+            ))),
           ),
-          Text(
-            book.author,
-            style: TextStyle(
-              fontSize: 13, // Adjust the font size as needed
-              fontWeight: FontWeight.bold, // You can change the font weight
-              color: Colors.grey, // You can set the text color
+          Container(
+            height: 60,
+            child: Column(
+              children: [
+                Text(
+                  book.title,
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis, // text ...
+                ),
+                Text(
+                  book.author,
+                  style: TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.grey,
+                  ),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis, // text ...
+                ),
+              ],
             ),
           ),
         ],

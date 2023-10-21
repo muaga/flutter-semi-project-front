@@ -10,8 +10,8 @@ import 'package:flutter_blog/ui/pages/book_detail_page/widgets/expandable_descri
 import 'package:flutter_blog/ui/pages/book_detail_page/widgets/millie_ranking.dart';
 import 'package:flutter_blog/ui/pages/book_detail_page/widgets/review_card.dart';
 import 'package:flutter_blog/ui/pages/book_detail_page/widgets/review_insert.dart';
-import 'package:flutter_blog/ui/widgets/thick_line.dart';
-import 'package:flutter_blog/ui/widgets/thin_line.dart';
+import 'package:flutter_blog/ui/widgets/custom_thick_line.dart';
+import 'package:flutter_blog/ui/widgets/custom_thin_line.dart';
 
 class BookDetailBody extends StatelessWidget {
   const BookDetailBody({super.key});

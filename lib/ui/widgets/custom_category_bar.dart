@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blog/ui/pages/book_list_page/widgets/book_grid_view.dart';
 import 'package:flutter_blog/ui/widgets/custom_category_button.dart';
 
 class CustomCategoryBar extends StatefulWidget {
@@ -78,7 +79,7 @@ class _CustomCategoryBarState extends State<CustomCategoryBar> {
             ),
           ),
           SliverFillRemaining(
-            child: Text("${_pageIndex}"),
+            child: BookGridView(),
           )
         ],
       ),

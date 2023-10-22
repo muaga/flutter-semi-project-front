@@ -3,7 +3,6 @@ import 'package:flutter_blog/data/model/Book.dart';
 
 class BookForm extends StatelessWidget {
   final Book book;
-
   const BookForm(this.book);
 
   @override
@@ -15,7 +14,7 @@ class BookForm extends StatelessWidget {
             child: Container(
                 decoration: BoxDecoration(
                     image: DecorationImage(
-              image: AssetImage(book.bookImage),
+              image: AssetImage(book.picUrl ?? ""),
               fit: BoxFit.cover,
             ))),
           ),
@@ -24,7 +23,7 @@ class BookForm extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  book.title,
+                  book.title ?? "",
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
@@ -34,7 +33,7 @@ class BookForm extends StatelessWidget {
                   overflow: TextOverflow.ellipsis, // text ...
                 ),
                 Text(
-                  book.author,
+                  book.writer ?? "",
                   style: TextStyle(
                     fontSize: 13,
                     fontWeight: FontWeight.bold,

@@ -6,7 +6,6 @@ class BookListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("1");
     return Scaffold(
         appBar: AppBar(
           leading: IconButton(

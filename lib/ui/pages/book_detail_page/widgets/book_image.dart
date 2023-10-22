@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blog/_core/constants/size.dart';
 
 class BookImage extends StatelessWidget {
-  const BookImage({
-    super.key,
-  });
+  final String picUrl;
+  const BookImage({required this.picUrl});
 
   @override
   Widget build(BuildContext context) {
+    double imageHeight = getScreenHeight(context) / 2.5; // 책 이미지의 높이
+    double imageWidth = imageHeight * 1 / 1.4;
+
     return Center(
       child: Container(
-        height: 300,
-        width: 230,
+        height: imageHeight,
+        width: imageWidth,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: NetworkImage("https://picsum.photos/200/300"),
-            fit: BoxFit.cover,
+            image: AssetImage(picUrl),
+            fit: BoxFit.contain,
           ),
           boxShadow: [
             BoxShadow(

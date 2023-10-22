@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blog/_core/constants/colors.dart';
+import 'package:flutter_blog/data/model/Book.dart';
 import 'package:flutter_blog/ui/pages/book_detail_page/widgets/book_comment.dart';
 import 'package:flutter_blog/ui/pages/book_detail_page/widgets/book_data.dart';
 import 'package:flutter_blog/ui/pages/book_detail_page/widgets/book_image.dart';
@@ -14,20 +15,22 @@ import 'package:flutter_blog/ui/widgets/custom_thick_line.dart';
 import 'package:flutter_blog/ui/widgets/thin_line.dart';
 
 class BookDetailBody extends StatelessWidget {
-  const BookDetailBody({super.key});
+  final Book book;
+  const BookDetailBody({required this.book});
 
   @override
   Widget build(BuildContext context) {
+    ;
     return ListView(
       children: [
         /// 북 이미지 컴포넌트
-        BookImage(),
+        BookImage(picUrl: book.picUrl ?? ""),
 
         /// 간격: 15
-        SizedBox(height: 15),
+        SizedBox(height: 20),
 
         /// 타이틀 + writer 컴포넌트
-        BookTitleAndWriter(),
+        BookTitleAndWriter(title: book.title ?? "", writer: book.writer ?? ""),
 
         /// 간격: 북이미지-제목
         SizedBox(height: 15),
@@ -108,6 +111,7 @@ class BookDetailBody extends StatelessWidget {
           ),
         ),
 
+        SizedBox(height: 15),
         ThickLine(),
 
         /// 밀리 순위(있는곳도 있고 없는 곳도 있음)
@@ -126,8 +130,7 @@ class BookDetailBody extends StatelessWidget {
             ThinLine(),
             CustomPlus(
               title: "책 소개",
-              description:
-                  "에르메스, 시슬리, 까르띠에, 프레데릭 말, 입생로랑 세계적인 향수를 탄생시킨 마스터 조향사 장 클로드 엘레나의 '향수 식물학' 세계로 초대합니다",
+              description: "${book.content}",
             ),
           ],
         ),
@@ -148,7 +151,7 @@ class BookDetailBody extends StatelessWidget {
         ),
         ExpandableDescription(
             title: "저자 소개",
-            description: "지은이_ 장 클로드 엘레나 Jean-Claude Ellena\n"
+            description: "지은이_ ${book.writer}\n"
                 "\n"
                 "전 세계적으로 손꼽히는 마스터 조향사이자 조향계의 살아 있는 전설. 1947년 프랑스 남부에 위치한 향수의 본고장 그라스에서 태어났다. 17세에 스위스 제네바의 향수전문학교인 지보당Givaudan에 입학했으며 그라스의 최대 향수 회사인 앙투안 쉬리Antoine Chiris의 조교를 거쳐, 이후 전 세계인들에게 사랑받는 매혹적인 향의 연금술사가 되었다. 14년 동안 에르메스 전속 조향사로 지내며 에르메스 향의 세계를 구축하다가 2018년부터 독립 조향사로서 70대인 지금도 활발히 활동하고 있다.\n"),
         ExpandableDescription(

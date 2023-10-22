@@ -36,8 +36,13 @@ class BookGridView extends ConsumerWidget {
           return InkWell(
               onTap: () {
                 int? bookId = books[index].id;
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => BookDetailPage()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            BookDetailPage(bookId: bookId ?? 0)));
+
+                /// ?가 붙는 변수는 꼭 null일 때의 디폴트값을 명시해줄것
               },
               child: BookForm(books[index]));
         },

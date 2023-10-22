@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blog/ui/pages/book_detail_page/widgets/book_detail_body.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'widgets/book_detail_body.dart';
 
-class BookDetailPage extends ConsumerWidget {
-  const BookDetailPage();
+class BookDetailPage extends StatelessWidget {
+  // final int bookId;
+  const BookDetailPage({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(

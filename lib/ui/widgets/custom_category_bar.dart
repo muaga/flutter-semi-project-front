@@ -10,7 +10,13 @@ class CustomCategoryBar extends StatefulWidget {
 }
 
 class _CustomCategoryBarState extends State<CustomCategoryBar> {
-  int _pageIndex = 0; // 현재 페이지 인덱스
+  int _pageIndex = 1; // 현재 페이지 인덱스
+
+  @override
+  void initState() {
+    super.initState();
+    BookGridView(bookId: _pageIndex); // pageIndex 번호에 따른 BookGridView 호출
+  }
 
   void changePage(int index) {
     setState(() {
@@ -79,7 +85,7 @@ class _CustomCategoryBarState extends State<CustomCategoryBar> {
             ),
           ),
           SliverFillRemaining(
-            child: BookGridView(),
+            child: BookGridView(bookId: _pageIndex),
           )
         ],
       ),

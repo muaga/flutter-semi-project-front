@@ -22,9 +22,7 @@ class BookDetailViewModel extends StateNotifier<BookDetailModel?> {
   }
 }
 
-// 창고 관리자
-final bookDetailProvider =
-    StateNotifierProvider.autoDispose<BookDetailViewModel, BookDetailModel?>(
-        (ref) {
-  return BookDetailViewModel(null, ref)..notifyInit(1);
+final bookDetailProvider = StateNotifierProvider.autoDispose
+    .family<BookDetailViewModel, BookDetailModel?, int>((ref, bookId) {
+  return BookDetailViewModel(null, ref)..notifyInit(bookId);
 });

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class BookTitleAndWriter extends StatelessWidget {
-  const BookTitleAndWriter({
-    super.key,
-  });
+  final String title;
+  final String writer;
+
+  const BookTitleAndWriter({required this.title, required this.writer});
 
   @override
   Widget build(BuildContext context) {
@@ -11,18 +12,18 @@ class BookTitleAndWriter extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            "[독점] 향수가 된 식물들",
+            title,
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
 
           /// 간격: 5
-          SizedBox(height: 5),
+          SizedBox(height: 10),
 
           /// 작은글자
           Text(
-            "장 클로드 엘레나 지금 / 카린 도어링 프로저 그림 / 이주영 옮김",
-            style: TextStyle(fontSize: 10, color: Colors.grey),
+            writer,
+            style: TextStyle(fontSize: 15, color: Colors.grey),
             textAlign: TextAlign.center,
           ),
         ],

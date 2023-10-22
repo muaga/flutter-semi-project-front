@@ -37,9 +37,11 @@ class _CustomPlusState extends State<CustomPlus> {
                   ),
                 ),
                 SizedBox(height: 20),
-                Text(isExpanded
-                    ? widget.description
-                    : _getShortenedDescription()),
+                Text(
+                  isExpanded ? widget.description : _getShortenedDescription(),
+                  style: TextStyle(height: 1.3),
+                  softWrap: true,
+                ),
               ],
             ),
           ),
